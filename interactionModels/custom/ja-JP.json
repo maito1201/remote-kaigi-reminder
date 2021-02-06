@@ -1,0 +1,103 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "リモート会議リマインダー",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "キャンセル"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "わからない",
+            "ヘルプ"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "とめて",
+            "ストップ"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": [
+            "会議",
+            "リモート会議"
+          ]
+        },
+        {
+          "name": "DateTimeIntent",
+          "slots": [
+            {
+              "name": "Date",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "Time",
+              "type": "AMAZON.TIME"
+            }
+          ],
+          "samples": [
+            "{Date} {Time} に会議",
+            "{Time}",
+            "{Date} {Time}"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "DateTimeIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.728279848283"
+          },
+          "slots": [
+            {
+              "name": "Date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "Time",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.728279848283",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{Time} のじゅっぷん前と一分前にリマインドします、よろしいでしょうか"
+          },
+          {
+            "type": "PlainText",
+            "value": "{Date} {Time} のじゅっぷん前と一分前にリマインドします、よろしいでしょうか"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "15"
+}

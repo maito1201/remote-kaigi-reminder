@@ -1,0 +1,75 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "ja-JP": {
+          "summary": "リモート会議に特化したリマインダーです、会議時刻を話すと10分前と1分前にリマインダーをセットしてくれます。",
+          "examplePhrases": [
+            "アレクサ、リモート会議リマインダーをを開いて",
+            "10時10分",
+            "ヘルプ"
+          ],
+          "keywords": [
+            "会議",
+            "リモート会議",
+            "アラーム",
+            "リマインダー"
+          ],
+          "name": "リモート会議リマインダー",
+          "description": "リモート会議に特化したリマインダーです、\n「アレクサ、リモート会議リマインダー」でスキルが起動します。\n「〇月〇日、〇時〇分」もしくは「〇時〇分」と会議の時間を指定すると、10分前と1分前の二つのリマインダーを作成します。",
+          "smallIconUri": "file://assets/images/ja-JP_smallIconUri.png",
+          "largeIconUri": "file://assets/images/ja-JP_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "「アレクサ、リモート会議リマインダー」でスキルを起動\n日付と時刻を指定\n時刻だけを指定\n現在時刻から5分後の時刻を指定(10分前のリマインダーは作成されません）\n過去の時刻を指定（何も起きません）",
+      "category": "ALARMS_AND_CLOCKS",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:650228154262:function:366a75da-5154-4ba1-8907-78155416352e:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:650228154262:function:366a75da-5154-4ba1-8907-78155416352e:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:650228154262:function:366a75da-5154-4ba1-8907-78155416352e:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:650228154262:function:366a75da-5154-4ba1-8907-78155416352e:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::alerts:reminders:skill:readwrite"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "ja-JP": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
