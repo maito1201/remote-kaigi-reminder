@@ -39,10 +39,22 @@
             },
             {
               "name": "Time",
-              "type": "AMAZON.TIME"
+              "type": "AMAZON.TIME",
+              "samples": [
+                "{Time} に会議",
+                "{Time} に設定して",
+                "{Time}"
+              ]
             }
           ],
           "samples": [
+            "{Time} に設定",
+            "{Time} に設定して",
+            "{Date} の {Time} に設定",
+            "{Date} の {Time} に設定して",
+            "{Date} の {Time} に会議",
+            "{Date} の {Time}",
+            "{Date}",
             "{Date} {Time} に会議",
             "{Time}",
             "{Date} {Time}"
@@ -74,9 +86,11 @@
             {
               "name": "Time",
               "type": "AMAZON.TIME",
-              "elicitationRequired": false,
+              "elicitationRequired": true,
               "confirmationRequired": false,
-              "prompts": {}
+              "prompts": {
+                "elicitation": "Elicit.Slot.1593282359908.1296752154328"
+              }
             }
           ]
         }
@@ -89,15 +103,24 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "{Time} のじゅっぷん前と一分前にリマインドします、よろしいでしょうか"
+            "value": "{Time} のじゅっぷんまえと一分前にリマインドします、よろしいでしょうか"
           },
           {
             "type": "PlainText",
-            "value": "{Date} {Time} のじゅっぷん前と一分前にリマインドします、よろしいでしょうか"
+            "value": "{Date} {Time} のじゅっぷんまえと一分前にリマインドします、よろしいでしょうか"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1593282359908.1296752154328",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{Date} の何時でしょうか"
           }
         ]
       }
     ]
   },
-  "version": "15"
+  "version": "24"
 }

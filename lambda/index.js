@@ -25,6 +25,10 @@ const MESSAGES = {
     NO_REMINDER_SET: '既にその時刻を過ぎています'
 }
 
+const CARD_MESSAGES = {
+    TITLE: 'リマインダーをセットしました'
+}
+
 const ERROR_MESSAGES = {
     UNSUPPORTED_DEVICE: 'このデバイスはリマインダーに対応していません',
     STATUS_UNKNOWN: 'すみません、リマインダーの予約で予期せぬエラーが発生しました',
@@ -131,8 +135,12 @@ const DateTimeHandler = {
                     const reminderResponse2 = await client.createReminder(reminderRequest2);
                 } else {
                     speakOutput = MESSAGES.NO_REMINDER_SET;
+                    return responseBuilder.speak(speakOutput).getResponse();
                 }
-                return responseBuilder.speak(speakOutput).getResponse();
+                return responseBuilder
+                    .withSimpleCard(CARD_MESSAGES["TITLE"], speakOutput)
+                    .speak(speakOutput)
+                    .getResponse();
             } catch (error) {
                 throw error;
             }
